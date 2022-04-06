@@ -29,14 +29,24 @@ export const initialState: WeatherState = {
       lat: 54.099918,
       lon: 22.926979
     }
-  ]
+  ],
+  temperature: {},
+  windSpeed: {}
 };
 
 const reducer = createReducer(
   initialState,
 
-  on(WeatherActions.getCityWeatherSuccess, (state, { data }) => ({
+  on(WeatherActions.getCityWeatherSuccess, (state, { cityName, data }) => ({
     ...state,
+    temperature: {
+      ...state.temperature,
+      [cityName]: data.main?.temp
+    },
+    windSpeed: {
+      ...state.windSpeed,
+      [cityName]: data.wind?.speed
+    }
   }))
 );
 
