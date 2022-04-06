@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { weatherReducer } from './store/weather.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherEffects } from './store/weather.effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
       weather: weatherReducer
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([WeatherEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,5 +5,5 @@ export interface WeatherState {
 export interface CityState {
   name: string;
   lat: number;
-  long: number;
+  lon: number;
 }
