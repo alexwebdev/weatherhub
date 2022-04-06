@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { weatherReducer } from './store/weather.reducer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { weatherReducer } from './store/weather.reducer';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot({
       weather: weatherReducer
     }, {}),
