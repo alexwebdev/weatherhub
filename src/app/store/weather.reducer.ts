@@ -1,7 +1,7 @@
-import { AppState } from './app.state';
+import { WeatherState } from './weather.state';
 import { Action, createReducer } from '@ngrx/store';
 
-export const initialState: AppState = {
+export const initialState: WeatherState = {
   cities: [
     {
       name: 'Kraków',
@@ -35,6 +35,6 @@ const reducer = createReducer(
   initialState
 );
 
-export function appReducer(state: AppState | undefined, action: Action) {
+export function weatherReducer(state: WeatherState | undefined, action: Action) {
   return reducer(state, action);
 }

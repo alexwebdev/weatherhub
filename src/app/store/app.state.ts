@@ -1,9 +1,5 @@
-export interface AppState {
-  cities: CityState[];
-}
+import { WeatherState } from './weather.state';
 
-interface CityState {
-  name: string;
-  lat: number;
-  long: number;
+export interface AppState {
+  weather: WeatherState;
 }

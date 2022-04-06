@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { appReducer } from './store/app.reducer';
+import { weatherReducer } from './store/weather.reducer';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { appReducer } from './store/app.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      app: appReducer
+      weather: weatherReducer
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([])
