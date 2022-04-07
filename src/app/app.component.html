@@ -6,7 +6,7 @@
         <mat-expansion-panel-header>
           <div fxFlex="100%" fxLayoutAlign="space-between center">
             <span>{{ city.name }}</span>
-            <span>20&deg;</span>
+            <span>{{ state.temperature[city.name] | number:'1.0-0'}}&deg;</span>
           </div>
         </mat-expansion-panel-header>
       </mat-expansion-panel>
