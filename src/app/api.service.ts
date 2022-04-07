@@ -7,8 +7,6 @@ import { environment } from '../environments/environment';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  //https://api.openweathermap.org/data/2.5/weather?lat=51&lon=17&appid=a72a3f7efc9702ddfb2be2efb6611217&units=metric
-
   getWeather(lat: number, lon: number): Observable<any> {
     return this.http.get(`${environment.weatherApi.url}/weather`, {
       params: {
@@ -16,6 +14,18 @@ export class ApiService {
         lon,
         units: 'metric',
         appId: environment.weatherApi.appId
+      }
+    });
+  }
+
+  getForecast(lat: number, lon: number): Observable<any> {
+    return this.http.get(`${environment.weatherApi.url}/forecast`, {
+      params: {
+        lat,
+        lon,
+        units: 'metric',
+        appId: environment.weatherApi.appId,
+        cnt: 5
       }
     });
   }

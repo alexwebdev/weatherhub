@@ -31,7 +31,8 @@ export const initialState: WeatherState = {
     }
   ],
   temperature: {},
-  windSpeed: {}
+  windSpeed: {},
+  forecast: {}
 };
 
 const reducer = createReducer(
@@ -47,7 +48,15 @@ const reducer = createReducer(
       ...state.windSpeed,
       [cityName]: data.wind?.speed
     }
-  }))
+  })),
+
+  on(WeatherActions.getForecastSuccess, (state, { cityName, data }) => ({
+    ...state,
+    forecast: {
+      ...state.forecast,
+      [cityName]: data
+    }
+  })),
 );
 
 export function weatherReducer(state: WeatherState | undefined, action: Action) {

@@ -2,7 +2,7 @@
   <div class="container">
     <mat-accordion displayMode="flat">
       <mat-expansion-panel *ngFor="let city of state.cities; let last = last"
-                           [class.last]="last" hideToggle>
+                           [class.last]="last" (opened)="onPanelOpen(city)" hideToggle>
         <mat-expansion-panel-header>
           <div fxFlex="100%" fxLayoutAlign="space-between center">
             <span>{{ city.name }}</span>

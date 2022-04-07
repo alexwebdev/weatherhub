@@ -18,4 +18,21 @@ export namespace WeatherActions {
   );
 
   export const getCityWeatherError = createAction('Get city weather - error');
+
+  export const getForecast = createAction(
+    'Get forecast',
+    props<{ city: CityState }>()
+  );
+
+  export const getForecastSuccess = createAction(
+    'Get forecast - success',
+    props<{
+      cityName: string,
+      data: any[]
+    }>()
+  );
+
+  export const getForecastError = createAction(
+    'Get forecast - error'
+  );
 }

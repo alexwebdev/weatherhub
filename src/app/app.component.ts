@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherStore } from './store/weather.store';
+import { CityState } from './store/weather.state';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.weatherStore.getWeather();
+  }
+
+  onPanelOpen(city: CityState): void {
+    this.weatherStore.getForecast(city);
   }
 
 }

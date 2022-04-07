@@ -2,6 +2,7 @@ export interface WeatherState {
   cities: CityState[];
   temperature: TemperatureState;
   windSpeed: WindSpeedState;
+  forecast: ForecastState;
 }
 
 export interface CityState {
@@ -18,4 +19,8 @@ export interface TemperatureState {
 
 export interface WindSpeedState {
   [cityName: string]: number;
+}
+
+export interface ForecastState {
+  [cityName: string]: any[];
 }
