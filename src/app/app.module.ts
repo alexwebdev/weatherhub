@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { weatherReducer } from './store/weather.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherEffects } from './store/weather.effects';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WeatherEffects } from './store/weather.effects';
       weather: weatherReducer
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([WeatherEffects])
+    EffectsModule.forRoot([WeatherEffects]),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
