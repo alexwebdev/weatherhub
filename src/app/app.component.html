@@ -15,6 +15,17 @@
             </div>
           </div>
         </mat-expansion-panel-header>
+
+        <!--    forecast data    -->
+        <ng-container *ngIf="state.forecast[city.name] as forecastList">
+          <div fxLayoutAlign="space-between start">
+            <div *ngFor="let item of forecastList" fxLayout="column" fxLayoutAlign="start center">
+              <span>{{ item.dt_txt | date:'HH' }}</span>
+              <img fxFlexOffset="5px" src="assets/icons/cloudy.png">
+              <span fxFlexOffset="16px" class="temperature-forecast">{{ item.main?.temp | number:'1.0-0'}}&deg;</span>
+            </div>
+          </div>
+        </ng-container>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
