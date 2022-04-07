@@ -28,6 +28,7 @@ export class WeatherEffects {
   getForecast$ = createEffect(() => this.actions$.pipe(
     ofType(WeatherActions.getForecast),
     switchMap(({ city }) => this.api.getForecast(city.lat, city.lon).pipe(
+      // Pass all forecast data in the action. Could be filtered only to needed properties
       map(data => WeatherActions.getForecastSuccess({ cityName: city.name, data: data?.list })),
       catchError(() => of(WeatherActions.getForecastError()))
     ))
