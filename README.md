@@ -11,12 +11,14 @@ to react to dispatched actions and perform api requests.
 There is also fxFlex package installed and MatExpansion module to manage accordion component.
 
 ## Limitations
+Due to limited time for this task I had to cut down on features. Here are some limitations that come to my mind:
 - I had to expose my openweathermap api key to request their data. Please replace it in environment config.
 - City list is predefined. I chose 5 random European cities.
 - Weather data is fetched once the app starts. It's not updated in intervals etc.
 - Forecast data is fetched each time a panel is expanded. Not a most efficient solution but enough for this use case :)
 - No error handling - in case weather requests fail.
 - No loading indicators to show that data is being fetched.
+- Not-so-responsive design. Should be run in desktop mode.
 
 ## Development server
 
