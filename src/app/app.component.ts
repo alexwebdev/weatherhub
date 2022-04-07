@@ -4,13 +4,12 @@ import { WeatherStore } from './store/weather.store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = '';
 
   constructor(
-    private weatherStore: WeatherStore,
+    public weatherStore: WeatherStore,
   ) {}
 
   ngOnInit() {

@@ -1,0 +1,25 @@
+.container {
+  width: 600px;
+  margin: 100px auto;
+}
+
+.mat-accordion {
+  background: pink;
+}
+
+.mat-expansion-panel {
+  background: #3684B3;
+  border-bottom: 1px solid #3684B3;
+
+  &.last {
+    border-bottom: none;
+  }
+}
+
+.mat-expansion-panel-header {
+  height: 70px;
+  background: #262C44;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+}

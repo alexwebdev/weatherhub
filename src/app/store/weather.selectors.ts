@@ -5,6 +5,11 @@ import { AppState } from './app.state';
 export namespace WeatherSelectors {
   export const weatherState = (state: AppState) => state.weather;
 
+  export const state = createSelector(
+    weatherState,
+    (state: WeatherState) => state
+  );
+
   export const cities = createSelector(
     weatherState,
     (state: WeatherState) => state.cities

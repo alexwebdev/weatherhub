@@ -7,6 +7,7 @@ import { WeatherActions } from './weather.actions';
 @Injectable({ providedIn: 'root' })
 export class WeatherStore {
 
+  state$ = this.store.select(WeatherSelectors.state);
   cities$ = this.store.select(WeatherSelectors.cities);
 
   constructor(private store: Store<AppState>) {}
